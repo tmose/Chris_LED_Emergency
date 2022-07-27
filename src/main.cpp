@@ -20,6 +20,7 @@
  * HISTORY:
  * Date      	By	Comments
  * ----------	---	----------------------------------------------------------
+ * 07-27-2022	tmo	Resolved led level for quarter brightness
  * 07-27-2022	tmo	Removed unused code
  * 07-27-2022	tmo	Rewrote control logic
  * --------------------------------------------------------------------------- */
@@ -36,16 +37,18 @@ const int LEDM3 = D7;
 const int LEDM4 = D4;
 const int LEDC1 = D8;
 
-const int L_OFF = 254;
-const int L_QUARTER = 10;
-const int L_MID = 126;
-const int L_3_QUARTER = 63;
+const int L_OFF = 1024;
+const int L_QUARTER = 768;
+const int L_MID = 512;
+const int L_3_QUARTER = 256;
 const int L_HIGH = 0;
 
 const int delayTime = 60;
 
 void setup()
 {
+    analogWriteRange(1024);
+    //analogWriteFreq(10khz);
     // set the PIN mode for all LED
     pinMode(LED_1, OUTPUT);
     pinMode(LED_2, OUTPUT);
