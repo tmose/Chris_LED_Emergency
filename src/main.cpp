@@ -34,10 +34,10 @@ const int LED_4 = D3;
 const int LEDM1 = D5;
 const int LEDM2 = D6;
 const int LEDM3 = D7;
-const int LEDM4 = D4;
-const int LEDC1 = D8;
+const int LEDM4 = D10;
+const int LEDC1 = D9;
 
-const int L_OFF = 1024;
+const int L_OFF = 1023;
 const int L_QUARTER = 768;
 const int L_MID = 512;
 const int L_3_QUARTER = 256;
@@ -77,9 +77,10 @@ void loop()
 {
     // time slot 0
     analogWrite(LED_1, L_OFF);
+    analogWrite(LED_2, L_OFF);
     analogWrite(LED_4, L_HIGH);
     analogWrite(LED_3, L_OFF);
-    analogWrite(LEDC1, L_HIGH);
+    analogWrite(LEDC1, L_OFF);
     analogWrite(LEDM3, L_HIGH);
     delay(delayTime);
 
@@ -87,33 +88,39 @@ void loop()
     analogWrite(LED_1, L_QUARTER);
     analogWrite(LED_4, L_3_QUARTER);
     analogWrite(LEDM3, L_3_QUARTER);
+    analogWrite(LEDC1, L_QUARTER);
     delay(delayTime);
 
     // time slot 120
     analogWrite(LED_1, L_MID);
     analogWrite(LED_4, L_MID);
     analogWrite(LEDM3, L_OFF);
+    analogWrite(LEDC1, L_MID);
     delay(delayTime);
 
     // time slot 180
     analogWrite(LED_1, L_3_QUARTER);
     analogWrite(LED_4, L_QUARTER);
+    analogWrite(LEDC1, L_3_QUARTER);
     delay(delayTime);
 
     // time slot 240
     analogWrite(LED_1, L_HIGH);
     analogWrite(LED_2, L_OFF);
     analogWrite(LED_4, L_OFF);
+    analogWrite(LEDC1, L_HIGH);
     delay(delayTime);
 
     // time slot 300
     analogWrite(LED_1, L_3_QUARTER);
     analogWrite(LED_2, L_QUARTER);
+    analogWrite(LEDC1, L_3_QUARTER);
     delay(delayTime);
 
     // time slot 360
     analogWrite(LED_1, L_MID);
     analogWrite(LED_2, L_MID);
+    analogWrite(LEDC1, L_MID);
     delay(delayTime);
 
     // time slot 420
@@ -121,6 +128,7 @@ void loop()
     analogWrite(LED_2, L_3_QUARTER);
     analogWrite(LEDM1, L_3_QUARTER);
     analogWrite(LEDM4, L_3_QUARTER);
+    analogWrite(LEDC1, L_QUARTER);
     delay(delayTime);
 
     // time slot 480
@@ -135,7 +143,7 @@ void loop()
     // time slot 540
     analogWrite(LED_2, L_3_QUARTER);
     analogWrite(LED_3, L_QUARTER);
-    analogWrite(LEDM1, L_QUARTER);
+    analogWrite(LEDM1, L_3_QUARTER);
     analogWrite(LEDM4, L_3_QUARTER);
     delay(delayTime);
 
