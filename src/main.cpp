@@ -20,6 +20,7 @@
  * HISTORY:
  * Date      	By	Comments
  * ----------	---	----------------------------------------------------------
+ * 09-16-2022	tmo	Changed passenger mirror direction
  * 07-27-2022	tmo	Resolved led level for quarter brightness
  * 07-27-2022	tmo	Removed unused code
  * 07-27-2022	tmo	Rewrote control logic
@@ -31,9 +32,9 @@ const int LED_2 = D1;
 const int LED_3 = D2;
 const int LED_4 = D3;
 
-const int LEDM1 = D5;
+const int LEDM1 = D7;
 const int LEDM2 = D6;
-const int LEDM3 = D7;
+const int LEDM3 = D5;
 const int LEDM4 = D10;
 const int LEDC1 = D9;
 
